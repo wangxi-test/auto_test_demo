@@ -1,0 +1,5 @@
+DEBUG E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:6
+INFO E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:7
+WARNING E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:8
+ERROR E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:9
+CRITICAL E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:10
