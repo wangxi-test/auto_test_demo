@@ -3,3 +3,54 @@ INFO E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:7
 WARNING E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:8
 ERROR E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:9
 CRITICAL E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:10
+DEBUG E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:6
+INFO E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:7
+WARNING E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:8
+ERROR E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:9
+CRITICAL E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:10
+DEBUG E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:6 这是debug日志
+INFO E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:7 这是info日志
+WARNING E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:8 这是warning日志
+ERROR E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:9 这是error日志
+CRITICAL E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:10 这是critical日志
+DEBUG E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:6 这是debug日志
+INFO E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:7 这是info日志
+WARNING E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:8 这是warning日志
+ERROR E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:9 这是error日志
+CRITICAL E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:10 这是critical日志
+DEBUG E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:6 杩欐槸debug鏃ュ織
+INFO E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:7 杩欐槸info鏃ュ織
+WARNING E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:8 杩欐槸warning鏃ュ織
+ERROR E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:9 杩欐槸error鏃ュ織
+CRITICAL E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:10 杩欐槸critical鏃ュ織
+DEBUG E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:6 杩欐槸debug鏃ュ織
+INFO E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:7 杩欐槸info鏃ュ織
+WARNING E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:8 杩欐槸warning鏃ュ織
+ERROR E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:9 杩欐槸error鏃ュ織
+CRITICAL E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:10 杩欐槸critical鏃ュ織
+DEBUG E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:6 杩欐槸debug鏃ュ織
+INFO E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:7 杩欐槸info鏃ュ織
+WARNING E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:8 杩欐槸warning鏃ュ織
+ERROR E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:9 杩欐槸error鏃ュ織
+CRITICAL E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:10 杩欐槸critical鏃ュ織
+DEBUG E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:6 
+INFO E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:7 
+WARNING E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:8 
+ERROR E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:9 
+CRITICAL E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:10 
+DEBUG E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:6 
+INFO E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:7 
+WARNING E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:8 
+ERROR E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:9 
+CRITICAL E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:10 
+DEBUG E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:6 杩欐槸debug鏃ュ織
+INFO E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:7 杩欐槸info鏃ュ織
+WARNING E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:8 杩欐槸warning鏃ュ織
+ERROR E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:9 杩欐槸error鏃ュ織
+CRITICAL E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:10 杩欐槸critical鏃ュ織
+DEBUG E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:34
+INFO E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:35
+WARNING E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:36
+ERROR E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:37
+CRITICAL E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:38
+ERROR E:/project_workspace/key_word_driver/common/log_alarm.py log_alarm line:62

@@ -1,0 +1,75 @@
+test_info:
+  # 用例标题
+  title: MobileCodeWS_getMobileCodeInfo
+  # 用例所属产品版本
+  product_version: icm_v5.0
+  # 用例等级
+  case_level: normal
+  # 请求的域名，可写死，也可写成模板关联host配置文件，也可写在用例中
+  host: ${WeatherWebService_host}$
+  # 请求地址 选填（此处不填，每条用例必填)
+  address: /WebServices/WeatherWebService.asmx?wsdl
+  # 请求过滤地址
+  filter_address: http://WebXml.com.cn/
+  # 请求头 选填（此处不填，每条用例必填，如有的话)
+  headers:
+  # 请求协议
+  http_type: http
+  # 请求类型
+  request_type: soap_with_filter
+  # webservice接口里的函数名
+  function_name: getSupportCity
+  # 参数类型
+  parameter_type:
+  # 是否需要获取cookie
+  cookies: False
+  # 是否为上传文件的接口
+  file: False
+  # 超时时间（s），SOAP默认超时连接为90s
+  timeout: 100
+  # 运行顺序
+  run_order:
+
+# 前置条件，case之前需关联的接口
+premise:
+
+# 测试用例
+test_case:
+  - test_name: getSupportCity_1
+    # 用例ID
+    case_id: 1
+    is_run:
+    # 用例描述
+    info: getSupportCity test
+    # 请求参数
+    parameter:
+      byProvinceName: "四川"
+
+    # 校验列表
+    check:
+      check_type: Regular
+      expected_result:
+        - '成都 (56294)'
+        - '广元 (57206)'
+      expected_code:
+
+    global_relevance:
+    # 关联键
+    relevance:
+
+  - test_name: getSupportCity_2
+    case_id: 2
+    is_run:
+    info: getSupportCity test
+    parameter:
+      byProvinceName: "四川"
+
+    # 校验列表
+    check:
+      check_type: no_check   #不校验结果
+      expected_code:
+      expected_result:
+
+    global_relevance:
+    # 关联键
+    relevance:
