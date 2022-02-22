@@ -1,0 +1,16 @@
+-
+  url: http://www.baidu.com
+  time: 3
+  input:
+    name: id
+    value: kw
+    txt: "深岩银河"
+  click:
+    name: id
+    value: su
+  path: "./image/baidu_yaml.png"
+  assert:
+    name: xpath
+    value: //*[@id="1"]/div/div/h3/a/em
+    expect: 深岩银河
+

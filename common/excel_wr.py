@@ -71,6 +71,9 @@ class ParseExcel:
     #保存单元格
     def save_excel(self):
         self.wb.save(self.excel_file_path)
+    #关闭excel
+    def close(self):
+        self.wb.close()
     #单元格写入内容
     def write_cell_value(self,row_no,col_no,value,style=None,sheet_name=None):
         if sheet_name is not None:

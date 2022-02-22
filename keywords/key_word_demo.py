@@ -2,7 +2,9 @@ from time import sleep
 
 from selenium import webdriver
 from selenium.webdriver import ActionChains
+from common.log_alarm import DemoLog
 from selenium.webdriver.support.wait import WebDriverWait
+from common.chrome_options import Option
 
 
 class KeyDemo:
@@ -23,8 +25,20 @@ class KeyDemo:
             self.driver= webdriver.Chrome()
 
     # 打开浏览器
-    def browser(self,type_):
-        return getattr(webdriver,type_)()
+    def browser(self,**kwargs):
+        try:
+            if kwargs['text'] == 'Chrome':
+                DemoLog().log_alarm().info('Chrome浏览器正在启动中...')
+                driver = webdriver.Chrome(options=Option().options_conf())
+            else:
+                DemoLog().log_alarm().info('{0}浏览器正在启动...'.format(kwargs['text']))
+                driver = getattr(webdriver,kwargs['text'])()
+
+        except Exception as e:
+            DemoLog().log_alarm().error('启动{}浏览器错误'.format(kwargs['text']))
+            DemoLog().log_alarm().info('启动默认浏览器Chrome')
+            self.driver = webdriver.Chrome()
+
 
     # 进入页面
     def open(self,**kwargs):
@@ -36,7 +50,9 @@ class KeyDemo:
 
     # 输入
     def input(self,**kwargs):
-        self.loctor(**kwargs).send_keys(kwargs['text'])
+        el=self.loctor(**kwargs)
+        el.clear()                   # 先清空数据，在填写新的数据，防止默认值干扰
+        el.send_keys(kwargs['text'])
 
     # 点击
     def click(self,**kwargs):
@@ -65,8 +81,13 @@ class KeyDemo:
         action.move_to_element(self.loctor(**kwargs)).perform()
 
     # 文本断言校验
-    def assert_text(self,fact_text,**kwargs):
-        return self.loctor(**kwargs).text ==fact_text,'断言失败，期望结果为{}，实际结果为{}'.format(fact_text,self.loctor(name,value).text)
+    def assert_text(self,**kwargs):
+        # return self.loctor(**kwargs).text ==fact_text,'断言失败，期望结果为{}，实际结果为{}'.format(fact_text,self.loctor(**kwargs).text)
+        try:
+            assert self.loctor(**kwargs).text == kwargs['expect']
+            return True
+        except:
+            return False
 
     # 隐式等待
     def hidden_sleep(self,**kwargs):
@@ -76,7 +97,23 @@ class KeyDemo:
     def obvious_sleep(self,**kwargs,):
         WebDriverWait(self.driver,kwargs['text'],0.5).until(lambda el:self.driver.find_element(**kwargs),message='显示等待的元素，没有找到')
 
+    # 切换句柄，不关闭页面
+    def switch_no_close(self,**kwargs):
+        handles=self.driver.window_handles
+        self.driver.switch_to.window(handles[1])
+
+    # 切换句柄并关闭页面
+    def switch_with_close(self,**kwargs):
+        handles = self.driver.window_handles
+        self.driver.close()
+        self.driver.switch_to.window(handles[1])
+
+    # 切换到旧窗体
+    def switch_to_old(self,**kwargs):
+        handles = self.driver.window_handles
+        self.driver.switch_to.window(handles[0])
 
 if __name__ == '__main__':
-    pass
+    mdarg ={"text":"Chrome"}
+    KeyDemo().browser(**mdarg)
 

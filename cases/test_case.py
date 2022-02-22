@@ -1,5 +1,7 @@
 import os
 
+from openpyxl.styles import PatternFill,Font
+
 from keywords.key_word_demo import KeyDemo
 from selenium import webdriver
 import pytest
@@ -8,32 +10,36 @@ from common.excel_wr import ParseExcel
 # pytestmark =pytest.mark.skip()
 
 def test_01_search():
-    sheet=ParseExcel('../data/测试数据.xlsx').get_sheet_by_name('Sheet')
+    wb=ParseExcel('../data/测试数据.xlsx')
+    sheet=wb.get_sheet_by_name('Sheet')
     for value in sheet.values:
         args = {}
         args['method'] = value[1]
         args['name'] = value[2]
         args['value'] =value[3]
         args['text']=value[4]
+        args['expect'] = value[6]
         # 判断是否为测试用例
         if type(value[0]) is int:
             # 判断是否实例化浏览器
             if value[1] == 'browser':
                 driver=KeyDemo('Chrome')
+            # 断言判断
+            elif 'assert' in value[1]:
+                status=getattr(driver,value[1])(**args)
+                if status:
+                    print(status)
+                    sheet.cell(row=value[0]+1,column=9).value = 'pass'
+                    sheet.cell(row=value[0] + 1, column=9).fill = PatternFill('solid', fgColor='AACF91')  # 设置格式为绿色
+                    sheet.cell(row=value[0] + 1, column=9).font = Font(bold=True)  # 格式为加粗
+                else:
+                    sheet.cell(row=value[0] + 1, column=9).value = 'fail'
+                    sheet.cell(row=value[0] + 1, column=9).fill = PatternFill('solid', fgColor='FF0000')  # 设置格式为绿色
+                    sheet.cell(row=value[0] + 1, column=9).font = Font(bold=True)  # 格式为加粗
             else:
                 getattr(driver,value[1])(**args)
-
-
-    # kd = KeyDemo('Chrome')
-    # kd.driver.implicitly_wait(10)
-    # kd.open('http://www.baidu.com')
-    # kd.wait(3)
-    # print(kd.title())
-    # kd.input('id','kw','深岩银河')
-    # kd.click('id','su')
-    # kd.save_screen('./image/baidu.png')
-    # wc=kd.loctor('xpath','//*[@id="1"]/div/div/h3/a/em').text
-    # assert wc == '深岩1银河' ,'断言错误，是你麻痹'
+    wb.save_excel()
+    wb.close()
 
 
 if __name__ == '__main__':
